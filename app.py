@@ -123,7 +123,7 @@ if submitted:
     ax.legend()
     st.sidebar.pyplot(fig)
 
-st.sidebar.info(cluster_messages.get(predicted_label, "Unknown cluster"))
+    st.sidebar.info(cluster_messages.get(predicted_label, "Unknown cluster"))
     
 st.subheader("Cluster-wise Spending vs Income")
 import seaborn as sns
