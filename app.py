@@ -108,7 +108,12 @@ if submitted:
     predicted_label = predicted_clusters[-1]
 
     st.sidebar.success(f"Predicted Cluster for User: 🎯 **Cluster {predicted_label}**")
-
+    cluster_messages = {
+    0: "🧠 High-value cluster: Loyal customers!",
+    1: "💼 Moderate income & engagement. Upsell possible.",
+    2: "🔍 Low spenders, high recency. Need attention.",
+    3: "🎯 Deal-responsive group. Good for promos."
+    }
     # Optional: Show user PCA location
     fig = plt.figure(figsize=(6, 5))
     ax = fig.add_subplot(111, projection='3d')
@@ -118,6 +123,8 @@ if submitted:
     ax.legend()
     st.sidebar.pyplot(fig)
 
+st.sidebar.info(cluster_messages.get(predicted_label, "Unknown cluster"))
+    
 st.subheader("Cluster-wise Spending vs Income")
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -131,13 +138,7 @@ st.bar_chart(data["Cluster"].value_counts())
 
 st.subheader("View Clustered Data")
 st.dataframe(data)
-st.sidebar.success(f"Predicted Cluster for User: 🎯 **Cluster {predicted_label}**")
 
-cluster_messages = {
-    0: "🧠 High-value cluster: Loyal customers!",
-    1: "💼 Moderate income & engagement. Upsell possible.",
-    2: "🔍 Low spenders, high recency. Need attention.",
-    3: "🎯 Deal-responsive group. Good for promos."
-}
 
-st.sidebar.info(cluster_messages.get(predicted_label, "Unknown cluster"))
+
+

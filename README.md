@@ -1,4 +1,16 @@
-# 🛍️ Marketing Customer Segmentation
+---
+title: "Customer Segmentation using Clustering"
+emoji: 🛍️
+colorFrom: blue
+colorTo: pink
+sdk: streamlit
+sdk_version: "1.35.0"
+app_file: app.py
+pinned: false
+---
+
+
+#  Marketing Customer Segmentation
 
 This project performs customer segmentation using PCA + Agglomerative Clustering.
 
