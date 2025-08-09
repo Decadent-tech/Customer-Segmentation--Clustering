@@ -25,7 +25,7 @@ np.random.seed(42)
 #Loading the dataset
 data = pd.read_csv("dataset/marketing_campaign.csv", sep="\t")
 print("Number of datapoints:", len(data))
-data.head()
+print(data.head())
 
 #Information on features 
 print(data.info())
